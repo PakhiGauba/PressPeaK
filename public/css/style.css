@@ -10506,12 +10506,28 @@ address .tel i {
 /* Join CTA (Green Button) */
 .join-cta {
   background-color: #fff;
-  /* border-color:; */
   border: 2px solid #e85d04;
   color: #e85d04;
-  font-weight: lighter;
   font-weight: 500;
   border-radius: 0px 0px 25px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.max-width-join-cta {
+  max-width: 212.56px;
+  display: block;
+  margin: 0 auto;
+}
+
+.join-cta * {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .join-cta:hover {
@@ -10538,6 +10554,10 @@ address .tel i {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.button-left-space1 {
+  padding-left: 2rem;
 }
 
 .icon-container {
@@ -11241,6 +11261,12 @@ textarea.form-control {
     display: block;
     z-index: 1;
     position: relative;
+}
+
+.cta-narrow-in-community {
+    max-width: 212.56px; /* You can adjust this width as needed */
+    width: 100%;
+    margin: 0 auto; /* Center the button horizontally */
 }
 
 /* Style for the bottom bold paragraph */
@@ -12102,7 +12128,7 @@ textarea.form-control {
 }
 
 .carousel-post-desc {
-  color: #666;
+  color: #000;
   font-size: 14px;
 }
 
