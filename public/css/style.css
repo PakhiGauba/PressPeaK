@@ -11201,6 +11201,10 @@ textarea.form-control {
   margin-top: -3.6rem;
 }
 
+.padding-top2 {
+  padding-top: -10.5rem;
+}
+
 .margin-top9 {
   margin-top: -1.6rem;
 }
@@ -11221,6 +11225,61 @@ textarea.form-control {
   padding-top: 20px;
 }
 
+/* Remove top spacing override */
+.community-intro {
+    margin-top: 0 !important;
+    padding-top: 40px;
+    z-index: 2;
+    position: relative;
+    background-color: white; /* Ensure text is not over image */
+}
+
+/* Make sure image does not float behind text */
+.community-banner-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1;
+    position: relative;
+}
+
+/* Style for the bottom bold paragraph */
+.bold-message {
+    font-weight: bold;
+    font-size: 2.2rem;
+    text-align: center;
+    color: #e85d04;
+    margin-top: 20px;
+}
+
+.center-cta {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.center-cta .col-md-5 {
+    width: 100%;
+    max-width: 400px;
+    padding: 0;
+}
+
+.extra-margin-bottom {
+    margin-bottom: 30px;
+}
+
+.remove-top-space {
+    margin-top: 10px !important;
+}
+
+.bold-message {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
 
 .padding-left1 {
   padding-left: 3rem;
@@ -12284,7 +12343,7 @@ textarea.form-control {
   background-attachment: fixed;
   min-height: 100vh;
   margin: 0;
-  margin-top: -11rem;
+  margin-top: -2rem;
   padding: 0;
 }
 
