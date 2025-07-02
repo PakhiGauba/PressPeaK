@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RT25S7NVY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1RT25S7NVY');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Add CTAs here -->
+    <div class="cta-buttons-container text-center m-t-xs-30 m-b-xs-40">
+        <div class="row justify-content-center">
+            <div class="col-md-5 m-b-xs-20">
+                <a href="#" class="btn btn-primary btn-lg btn-block cta-button write-cta write-cta1 more-padding" data-bs-toggle="modal"
+                    data-bs-target="#writeWithUsModal">
+                    <i class="fas fa-pen-nib m-r-xs-10"></i> Write with PressPeaK
+                </a>
+            </div>
+            <div class="col-md-5">
+                <a href="https://chat.whatsapp.com/L6OI1mAb8DkJi9Nz4xk599" target="_blank"
+                    class="btn btn-success btn-lg btn-block cta-button join-cta less-padding">
+                    <div class="button-content">
+                        <div class="icon-container">
+                            <img src="./public/images/icons/whatsapp-image.svg" alt="" class="community-image">
+                            <i class="fab whatsapp fa-whatsapp fa-whatsappp m-r-xs-10"></i>
+                        </div>
+                        <span class="button-text">Join Community</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Write with PressPeaK Form -->
+    <div class="modal fade" id="writeWithUsModal" tabindex="-1" aria-labelledby="writeWithUsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="writeWithUsModalLabel">Write with us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="writerSubmissionForm" method="POST" action="/submit-story">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="writerName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="writerName" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="writerEmail" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="writerEmail" name="email" required
+                                    required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="writerPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="writerPhone" name="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contentLanguages" class="form-label">Languages You Write
+                                In</label>
+                            <input type="text" class="form-control" id="contentLanguages" name="languages"
+                                placeholder="English, Hindi, etc.">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contentTopics" class="form-label">Topics of Interest</label>
+                            <input type="text" class="form-control" id="contentTopics" name="topics"
+                                placeholder="Technology, Culture, Politics, etc.">
+                        </div>
+                        <!-- <div class="mb-3">
+    <label for="writerBio" class="form-label">Brief Bio</label>
+    <input type="text" class="form-control" id="writerBio" placeholder="Tell us about yourself">
+</div> -->
+                        <div class="mb-3">
+                            <label for="sampleContent" class="form-label">Content</label>
+                            <textarea class="form-control" id="sampleContent" name="content"
+                                placeholder="Enter content here" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                <label class="form-check-label" for="agreeTerms">
+                                    I agree to PressPeaK's terms and conditions
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="writerSubmissionForm" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<script src="./public/js/tap-animation.js"></script>
+</body>
+
+</html>

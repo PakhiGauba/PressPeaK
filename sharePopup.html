@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RT25S7NVY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1RT25S7NVY');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Buttons</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- <button class="demo-button" onclick="openSharePopup()">Share This Post</button> -->
+
+  <div class="share-overlay" id="shareOverlay">
+    <div class="share-popup">
+      <div class="popup-header">
+        <h3>SHARE:</h3>
+        <button class="close-popup" onclick="closeSharePopup()">&times;</button>
+      </div>
+
+      <div class="social-section">
+        <div class="social-icons">
+          <a href="#" class="social-icon facebook" onclick="shareFacebook(); return false;">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon twitter" onclick="shareTwitter(); return false;">
+            <i class="fab fa-twitter" aria-hidden="true"></i></i>
+          </a>
+          <a href="#" class="social-icon linkedin" onclick="shareLinkedIn(); return false;">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon whatsapp" onclick="shareWhatsapp(); return false;">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon instagram" onclick="shareInstagram(); return false;">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social-icon telegram" onclick="shareTelegram(); return false;">
+            <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="copy-section">
+        <div class="copy-label">Copy Link</div>
+        <div class="copy-link">
+          <input type="text" class="link-input" id="shareUrlInput" value="https://presspeak.co.in/index.html" readonly>
+          <button class="copy-button" id="copyButton" onclick="copyShareLink()">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./public/js/tap-animation.js"></script>
+</body>
+
+</html>

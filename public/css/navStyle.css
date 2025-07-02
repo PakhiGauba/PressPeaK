@@ -1,0 +1,391 @@
+/* Make clickable header elements white */
+.header-top-nav a,
+.header-top__social-share a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for clickable items */
+.header-top-nav a:hover,
+.header-top__social-share a:hover {
+  color: #e85d04;
+  text-decoration: none;
+}
+
+/* Keep current date in default color (likely gray/light gray based on bg-grey-dark-one) */
+.current-date {
+  color: rgba(255, 255, 255, 0.7);
+  /* Semi-transparent white */
+}
+
+/* Ensure social icons are white */
+.header-top__social-share .fab {
+  color: white;
+}
+
+/* Hover effect for social icons */
+.header-top__social-share .fab:hover {
+  color: #e85d04;
+  /* Same hover color for consistency */
+}
+
+@media (max-width: 1115px) {
+  .main-navigation {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+    padding: 25px 20px;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: block !important;
+  }
+
+  .main-navigation.opened {
+    left: 0;
+  }
+
+  .main-navigation li {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .main-navigation li a {
+    display: block;
+    font-size: 16px;
+  }
+
+  .main-navigation .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: transparent;
+    padding-left: 15px;
+    display: none;
+    transform: none;
+    width: 100%;
+  }
+
+  .main-navigation .submenu li {
+    border-bottom: none;
+    padding: 8px 0;
+  }
+
+  .navbar-inner {
+    position: relative;
+  }
+
+  .main-nav-toggler {
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .has-submenu {
+    position: relative;
+  }
+
+  .submenu-toggler {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.nav-cta-button {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  border-radius: 0.3rem;
+  margin-left: 10px;
+  border-radius: 0px 0px 10px 0px;
+  white-space: nowrap;
+}
+
+.second-cta {
+  border: 2px solid #e85d04;
+  background-color: #fff;
+  color: #e85d04;
+  font-weight: bold;
+}
+
+.second-cta:hover {
+  background-color: #ededed;
+  color: #60d669;
+  border-color: #e85d04;
+}
+
+.whatsapp-cta {
+  color: #60d669;
+  font-weight: bold;
+}
+
+@media (max-width: 1115px) {
+  .mobileVersion {
+    display: none;
+  }
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 1115px) {
+
+  /* Two-part layout: hamburger and logo on left, language selector on right */
+  .navbar-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Left section: Hamburger + Logo */
+  .mobile-left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-self: start;
+  }
+
+  /* Extreme Left: Hamburger menu */
+  .main-nav-toggler {
+    order: 1;
+    margin-left: 15px;
+  }
+
+  /* Second: Logo */
+  .brand-logo-container {
+    order: 2;
+    text-align: left;
+  }
+
+  .brand-logo {
+    max-height: 40px;
+    margin-top: -14px;
+    margin-left: -20px;
+  }
+
+  /* Right: Language selector */
+  .mobile-language-selector {
+    justify-self: end;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .flag-icon {
+    width: 20px;
+    height: auto;
+  }
+
+  /* Hide desktop navigation */
+  .main-nav-wrapper {
+    display: none;
+  }
+
+  /* Hamburger styling to match image */
+  .hamburger-icon {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .hamburger-bar1,
+  .hamburger-bar2,
+  .hamburger-bar3 {
+    width: 100%;
+    height: 2px;
+    background-color: #fff2f2;
+    /* Red color to match image */
+    margin: 4px 0;
+    border-radius: 1px;
+  }
+}
+
+/* Desktop view */
+@media (min-width: 992px) {
+  .mobile-language-selector {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .in-mobile {
+    margin-left: -2rem;
+  }
+}
+
+/* Mobile Navigation CSS */
+@media (max-width: 767px) {
+  .header-top {
+    background-color: #33312d;
+    padding: 0;
+  }
+
+  .header-top .container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  /* Hide desktop layout on mobile */
+  .desktop-header {
+    display: none;
+  }
+
+  /* Mobile header layout - single line with space between */
+  .mobile-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  /* Date styling */
+  .mobile-date {
+    color: #cecece;
+    font-size: 14px;
+    padding: 3px 10px;
+  }
+
+  /* Right nav links container */
+  .mobile-right-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Individual nav items */
+  .mobile-right-nav li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Nav link styling */
+  .mobile-right-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 3px 15px;
+    display: inline-block;
+    font-size: 14px;
+  }
+}
+
+.left-space {
+  margin-left: 5rem;
+}
+
+@media screen and (min-width: 1367px) {
+  .left-space2 {
+    margin-left: 17rem;
+  }
+}
+
+.left-space2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: clamp(1rem, 5vw, 0rem);
+}
+
+.margin-top3 {
+  margin-top: -7px;
+}
+
+.main-navigation {
+  margin-left: 0.97rem;
+}
+
+.main-navigation>li>a:hover {
+  color: #e85d04;
+}
+
+@media (min-width: 992px) {
+  .hidden-in-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1115px) {
+  .fix-in-mobile {
+    position: fixed;
+    top: -1rem;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    /* background-color: #33312d; */
+    padding: 10px 0;
+  }
+}
+
+/* Add shadow to navigation bar for all device views */
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Ensure shadow is visible on mobile, tablet and desktop */
+@media (max-width: 1115px) {
+    .navbar {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1115px) {
+    .navbar {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+@media (max-width: 1115px) {
+  .hidden-in-tab {
+    display: none !important;
+  }
+}
