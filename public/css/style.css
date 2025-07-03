@@ -10560,12 +10560,16 @@ address .tel i {
   padding-left: 2rem;
 }
 
+@media (max-width: 767px) {
+  .button-left-space1 {
+  padding-left: 0;
+}
+}
+
 .icon-container {
   position: relative;
   display: inline-block;
 }
-
-@media (max-width: 767px) {}
 
 .icon-container i {
   position: absolute;
@@ -11045,7 +11049,8 @@ textarea.form-control {
 .axil-latest-post .fig-container img {
   width: 100%;
   height: auto;
-  max-height: 565px;
+  /* max-height: 565px; */
+  max-height: 541.2px;
   display: block;
   border-radius: 10px;
   background-color: #f8f8f8;
@@ -11152,6 +11157,13 @@ textarea.form-control {
 .extraPadding1 {
   padding-left: 2%;
   padding-right: 2%;
+}
+
+@media (max-width: 767px) {
+  .extraPadding1 {
+  margin-top: 35px;
+  margin-bottom: 18px;
+  }
 }
 
 .extraPadding2 {
@@ -11295,6 +11307,12 @@ textarea.form-control {
 
 .extra-margin-bottom {
     margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .extra-margin-bottom {
+        margin-top: 10px;
+    }
 }
 
 .remove-top-space {
@@ -11947,6 +11965,7 @@ textarea.form-control {
 
   .more-padding {
     padding: 13px 0;
+    width: 100%;
   }
 
   .red-ld {
@@ -12369,7 +12388,7 @@ textarea.form-control {
   background-attachment: fixed;
   min-height: 100vh;
   margin: 0;
-  margin-top: -2rem;
+  margin-top: 0rem;
   padding: 0;
 }
 

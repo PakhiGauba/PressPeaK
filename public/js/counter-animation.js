@@ -1,52 +1,53 @@
-// Counter Animation Script
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16); // 60fps
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(start);
-        }
-    }, 16);
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const section = document.querySelector(".category-widget");
+  if (!section) return;
 
-// Initialize counter animation when section is visible
-function initCounterAnimation() {
-    const counterSection = document.querySelector('.category-widget');
-    const counters = document.querySelectorAll('.counter');
-    let hasAnimated = false;
+  const counters = section.querySelectorAll(".counter");
+  let started = false;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !hasAnimated) {
-                hasAnimated = true;
-                
-                counters.forEach(counter => {
-                    const target = parseInt(counter.textContent);
-                    counter.textContent = '0';
-                    animateCounter(counter, target, 2000);
-                });
-            }
-        });
-    }, {
-        threshold: 0.5 // Trigger when 50% of the section is visible
-    });
+  function animateCounter(el, endValue, duration = 1500) {
+    const startTime = performance.now();
 
-    if (counterSection) {
-        observer.observe(counterSection);
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentValue = Math.floor(progress * endValue);
+      el.textContent = currentValue;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = endValue;
+      }
     }
-}
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initCounterAnimation);
+    requestAnimationFrame(update);
+  }
 
-// Also initialize if script is loaded after DOM
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCounterAnimation);
-} else {
-    initCounterAnimation();
-}
+  function checkAndStartCounters() {
+    const rect = section.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom >= 0;
+
+    if (inView && !started) {
+      started = true;
+      counters.forEach(counter => {
+        const rawValue = counter.textContent.replace(/[^\d]/g, '');
+        const endValue = parseInt(rawValue);
+        animateCounter(counter, endValue);
+      });
+      window.removeEventListener("scroll", checkAndStartCounters);
+    }
+  }
+
+  // Ensure Owl Carousel is ready before checking visibility
+  const owlContainer = section.querySelector(".owl-carousel");
+  if (owlContainer && $(owlContainer).hasClass("owl-carousel")) {
+    $(owlContainer).on("initialized.owl.carousel", function () {
+      window.addEventListener("scroll", checkAndStartCounters);
+      checkAndStartCounters(); // Initial check
+    });
+  } else {
+    window.addEventListener("scroll", checkAndStartCounters);
+    checkAndStartCounters();
+  }
+});
