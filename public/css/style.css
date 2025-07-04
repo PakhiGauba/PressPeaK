@@ -3,7 +3,7 @@
 Product: 'Papr || HTML Template for News & Magazine'
 Version: 1.1
 Author: axilweb
-Date Created: July 26, 2019
+Date Created: July 26,  2025
 
 ==================================================== --*/
 /*-- == Table of contents =====================
@@ -5794,8 +5794,26 @@ input[type="radio"]+label::after {
 
 @media (max-width: 767px) {
   .brand-logo {
-    max-height: 5rem;
     max-width: 13rem;
+    max-height: 5rem;
+  }
+}
+
+/* Tablet view only: between 991px and 1199px */
+@media (min-width: 991px) and (max-width: 1199px) {
+  .brand-logo {
+    max-width: 20rem;
+    max-height: 6rem;
+    padding-left: 1rem;
+    padding-top: 0.2rem;
+    /* height: 3rem;
+    width: auto; */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-in-tab {
+    display: none !important;
   }
 }
 
@@ -5807,7 +5825,7 @@ input[type="radio"]+label::after {
 
 @media (max-width: 991px) {
   .main-navigation {
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
   }
 }
@@ -9798,7 +9816,7 @@ address .tel i {
 
 @media (min-width: 991px) and (max-width: 1115px) {
   .brand-logo {
-    height: 2.5rem;
+    height: 3.5rem;
     margin-top: -4px;
     margin-left: -6px;
   }
@@ -10963,10 +10981,10 @@ textarea.form-control {
   }
 }
 
-/* Media query for medium screens */
 @media (min-width: 768px) and (max-width: 1024px) {
   .thoughtfully {
     font-size: 1.25rem;
+    line-height: 1.5;
   }
 
   .bold-text {
@@ -11043,12 +11061,12 @@ textarea.form-control {
 /* Post image */
 .axil-latest-post .fig-container img {
   width: 100%;
-  height: auto;
-  /* max-height: 565px; */
-  max-height: 541.2px;
+  aspect-ratio: 1 / 1;
+  height: auto; /* Optional: can be removed if aspect-ratio is supported */
   display: block;
   border-radius: 10px;
   background-color: #f8f8f8;
+  object-fit: cover; /* ensures the image fills the square area */
 }
 
 /* Post title */
@@ -11147,6 +11165,12 @@ textarea.form-control {
   width: 117rem;
   height: auto;
   border-radius: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .map-frame {
+    height: 600px !important;
+  }
 }
 
 .extraPadding1 {
