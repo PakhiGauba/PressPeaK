@@ -10975,17 +10975,12 @@ textarea.form-control {
 }
 
 .red-o {
-  /* background: linear-gradient(to right, white, #e85d04); */
-  /* -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.3)); */
   color: #e85d04;
+  max-width: 40%;
 }
 
-.red-ld {
-  color: #e85d04
+.bold-heading {
+  font-weight: bolder;
 }
 
 .presspeak-banner {
