@@ -10602,6 +10602,15 @@ address .tel i {
   font-size: 23px;
 }
 
+@media (min-width: 991px) and (max-width: 1199px) {
+.visible-in-small-screens {
+  width: 40px;
+  height: auto;
+  display: block;
+  background: red; /* to test visibility */
+}
+}
+
 
 .community-image {
   height: 19px;
@@ -10921,20 +10930,10 @@ textarea.form-control {
   display: inline-block;
 }
 
-.bannerImage {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.overlayImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
+@media (max-width: 1116px) {
+  .bannerImage {
+    margin-top: -27px;
+  }
 }
 
 .text-overlay {
@@ -10947,6 +10946,7 @@ textarea.form-control {
 
 .thoughtfully {
   font-size: 2.5rem;
+  font-weight: 500;
   margin: 0;
   letter-spacing: 1px;
   background: linear-gradient(to right, white, #d8c7c7);
@@ -10967,13 +10967,14 @@ textarea.form-control {
 }
 
 /* Media query for screens up to 767px (mobile) */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .text-overlay {
     right: 3%;
   }
 
   .thoughtfully {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    text-align: center; 
   }
 
   .bold-text {
@@ -11861,7 +11862,7 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   .image-container {
     overflow: hidden;
     position: relative;
@@ -11871,8 +11872,6 @@ textarea.form-control {
     width: 310%;
     height: 80vh;
     max-width: none;
-    transform: translateX(-60%);
-    /* Shift left to show right part */
   }
 
   .text-overlay {
@@ -11899,32 +11898,9 @@ textarea.form-control {
 }
 
 /* Mobile CTA styling - only affects screens below 767px */
-@media (max-width: 767px) {
-
+@media (max-width: 1024px) {
   .whatsapp-background {
     height: 2px;
-  }
-
-  /* Keep the existing image container styling */
-  .image-container {
-    overflow: hidden;
-    position: relative;
-  }
-
-  .bannerImage {
-    /* width: 310%; */
-    height: auto;
-    max-width: none;
-    transform: translateX(-60%);
-    /* top: 2rem !important; */
-    top: 0px;
-  }
-
-  .overlayImage {
-    width: 200%;
-    max-width: none;
-    transform: translateX(-50%);
-    /* Match banner image */
   }
 
   .text-overlay {
@@ -11939,11 +11915,7 @@ textarea.form-control {
 
   /* Add styling for font sizes as requested */
   .thoughtfully {
-    font-size: 30px;
-    margin: 0 0 5px 0;
-    font-weight: 300;
-    letter-spacing: 1px;
-    line-height: 3.3rem;
+    font-size: 1.5rem;
   }
 
   .bold-text {
@@ -11994,7 +11966,7 @@ textarea.form-control {
   .join-cta {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 9px;
     text-decoration: none;
     padding: 10px 15px;
   }
@@ -12004,6 +11976,17 @@ textarea.form-control {
     margin-right: 8px;
     font-size: 18px;
     margin-left: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bannerImage {
+    background-image: url('../images/community-mobile-image.webp');
+    width: 100%;
+    margin: 0;
+    margin-top: 20rem;
+    min-height: 100vh;
+    margin-top: -2rem;
   }
 }
 
@@ -12084,12 +12067,22 @@ textarea.form-control {
 }
 
 /* Mobile-specific adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .whatsapp-container {
     width: 28px;
-    /* Slightly smaller for mobile */
     height: 28px;
   }
+
+  .whatsapp-container {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-image: url('../images/icons/whatsapp-image.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%; /* Optional for circular style */
+}
 }
 
 .container {
@@ -12415,15 +12408,64 @@ textarea.form-control {
   display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .community-banner-image {
     background-image: url('../images/community-mobile-image.webp');
     width: 100%;
     margin: 0;
+    margin-top: 20rem;
     min-height: 100vh;
     margin-top: -2rem;
   }
 }
+
+.banner-image {
+  width: 100vw;
+  height: 85vh;
+  background-image: url(../images/hero.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.banner-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.banner-image img {
+  display: none;
+}
+
+.overlay-image,
+.text-overlay {
+  position: relative;
+  z-index: 2; /* above the overlay */
+}
+
+@media (max-width: 1024px) {
+  .banner-image {
+    background-image: url('../images/hero-mobile-image.webp');
+    width: 100%;
+    margin: 0;
+    margin-top: -2rem;
+    min-height: 100vh;
+  }
+}
+
+
+
 
 .link-color {
   color: #e85d04;
