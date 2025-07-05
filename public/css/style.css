@@ -12400,11 +12400,11 @@ textarea.form-control {
 @media (max-width: 1024px) {
   .community-banner-image {
     background-image: url('../images/community-mobile-image.webp');
-    background-size: contain; /* 👈 Prevent zoom/crop */
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;  /* 👈 Fixes zooming issue */
     height: 100vh;
-    width: 100%; /* 👈 Full width of container */
+    width: 100%;
     margin: 0;
     margin-top: -2rem;
   }
