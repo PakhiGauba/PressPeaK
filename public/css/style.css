@@ -12400,8 +12400,9 @@ textarea.form-control {
 @media (max-width: 1024px) {
   .community-banner-image {
     background-image: url('../images/community-mobile-image.webp');
-    width: 100%;
-    height:auto;
+    /* width: 100%; */
+    height: 100vh;
+    width: auto;
     margin: 0;
     margin-top: 20rem;
     /* min-height: 100vh; */
