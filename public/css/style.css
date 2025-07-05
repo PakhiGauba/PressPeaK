@@ -12400,19 +12400,19 @@ textarea.form-control {
 @media (max-width: 1024px) {
   .community-banner-image {
     background-image: url('../images/community-mobile-image.webp');
-    /* width: 100%; */
+    background-size: contain; /* 👈 Prevent zoom/crop */
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
-    width: auto;
+    width: 100%; /* 👈 Full width of container */
     margin: 0;
-    margin-top: 20rem;
-    /* min-height: 100vh; */
     margin-top: -2rem;
   }
 }
 
 .banner-image {
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
   background-image: url(../images/hero.webp);
   background-size: cover;
   background-position: center;
